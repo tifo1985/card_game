@@ -17,3 +17,5 @@ vendorInstall: #- Install the vendors
 #- —— ✨ Code style / Tests services —————————————————————————————————————————————————————————
 php-cs-fixer: #- Check PHP Coding Standards Fixer.
 	$(DOCKER_EXEC_CMD) card_game-php /bin/sh -c "vendor/bin/php-cs-fixer fix --using-cache=no --verbose --diff --dry-run"
+apply-php-cs-fixer: #- Applying PHP Coding Standards Fixer.
+	$(DOCKER_EXEC_CMD) card_game-php /bin/sh -c "vendor/bin/php-cs-fixer fix --using-cache=no --verbose"
