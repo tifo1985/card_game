@@ -16,7 +16,7 @@ class GenerateGameController extends AbstractController
     public function __invoke(Request $request, GenerateGame $generateGame): JsonResponse
     {
         $game = $generateGame->execute();
-        $request->getSession()->set('game', json_encode($game));
+        $request->getSession()->set('game', \json_encode($game));
 
         return $this->json($game);
     }

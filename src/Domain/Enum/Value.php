@@ -7,7 +7,7 @@ namespace App\Domain\Enum;
 enum Value: string implements RandomInterface
 {
     use RandomTrait;
-    case One = 'as';
+    case Ase = 'ase';
     case Tow = '2';
     case Three = '3';
     case Four = '4';

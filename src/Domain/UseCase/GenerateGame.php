@@ -6,6 +6,7 @@ namespace App\Domain\UseCase;
 
 use App\Domain\Entity\Card;
 use App\Domain\Entity\Game;
+use App\Domain\Entity\Hand;
 use App\Domain\Enum\Color;
 use App\Domain\Enum\Value;
 
@@ -13,13 +14,12 @@ final class GenerateGame
 {
     public function execute(): Game
     {
-        $game = new Game(Color::randomOrder(), Value::randomOrder());
-
+        $hand = new Hand();
         do {
             $card = new Card(Color::random(), Value::random());
-            $game->addCard($card);
-        } while (!$game->valid());
+            $hand->addCard($card);
+        } while (!$hand->valid());
 
-        return $game;
+        return new Game(Color::randomOrder(), Value::randomOrder(), $hand);
     }
 }

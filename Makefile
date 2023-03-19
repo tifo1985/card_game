@@ -19,3 +19,5 @@ php-cs-fixer: #- Check PHP Coding Standards Fixer.
 	$(DOCKER_EXEC_CMD) card_game-php /bin/sh -c "vendor/bin/php-cs-fixer fix --using-cache=no --verbose --diff --dry-run"
 apply-php-cs-fixer: #- Applying PHP Coding Standards Fixer.
 	$(DOCKER_EXEC_CMD) card_game-php /bin/sh -c "vendor/bin/php-cs-fixer fix --using-cache=no --verbose"
+unit-tests: #- Run unit tests.
+	@$(DOCKER_EXEC_CMD) card_game-php /bin/sh -c "DEBUG_MODE=off APP_ENV=test vendor/bin/phpunit"
