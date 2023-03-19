@@ -26,3 +26,5 @@ When the project is already installed (after a reboot for example), to start it 
 ```bash
 make start
 ```
+
+Access the website with the URL http://localhost:8081/.
